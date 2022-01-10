@@ -1,36 +1,60 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
+
   public void settings() {
-	// put your size call here
+
     size(400, 400);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
+ 
   public void setup() {
-    background(210, 255, 173);
+    background(225);
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
   public void draw() {
-	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
 
-    stroke(255);
-    line(50, 125, 70, 50);  
+    float colour = 0;
+  
+    for (int lineX = 0; lineX <= 200; lineX += 1) {
+      
+      stroke(colour);
+      line(lineX, 200, lineX, height);
+      colour++;
+    }
+
+    stroke(0);
+    fill(204, 43, 185);
+    for (int circleY = 33; circleY <= 167; circleY += 33) {
+      for (int circleX = 233; circleX <= 367; circleX += 33) {
+        ellipse(circleX, circleY, 20, 20);
+      }
+    }
+
+    stroke(0);
+    fill(0);
+	  for (int line = 20; line <= 180; line += 20) {
+      line(line, 0, line, 200);
+    }
+    for (int line = 20; line <= 200; line += 20) {
+      line(0, line, 200, line);
+    }
+
+    stroke(0);
+    fill(214, 68, 15);
+
+    translate(300, 300);
+    for (int i = 0; i < 8; i++) {
+     rotate(TWO_PI / 8);
+      ellipse(0, -35, 20, 60);
+    }
+
+    stroke(11, 125, 49);
+    fill(11, 125, 49);
+    
+    ellipse(0, 0, 35, 35);
+
+
   }
   
-  // define other methods down here.
 }
