@@ -25,8 +25,8 @@ public class Sketch extends PApplet {
 
     stroke(0);
     fill(204, 43, 185);
-    for (int circleY = 33; circleY <= 167; circleY += 33) {
-      for (int circleX = 233; circleX <= 367; circleX += 33) {
+    for (int circleY = height/12; circleY <= height/2 - height/12; circleY += height/12) {
+      for (int circleX = width/2 + width/12; circleX <= width - width/12; circleX += width/12) {
         ellipse(circleX, circleY, 20, 20);
       }
     }
